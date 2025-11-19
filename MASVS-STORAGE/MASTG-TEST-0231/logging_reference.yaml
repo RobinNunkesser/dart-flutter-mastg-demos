@@ -1,0 +1,21 @@
+rules:
+  - id: dart-logging-detected
+    pattern-either:
+      - pattern: print(...)
+      - pattern: debugPrint(...)
+      - pattern: $LOG.log(...)
+      - pattern: $LOG.info(...)
+      - pattern: $LOG.warning(...)
+      - pattern: $LOG.severe(...)
+      - pattern: $LOG.fine(...)
+      - pattern: $LOG.finer(...)
+      - pattern: $LOG.finest(...)
+      - pattern: $LOG.shout(...)
+    message: Logging statement detected. Ensure sensitive data is not logged in production.
+    severity: WARNING
+    languages:
+      - dart
+    metadata:
+      category: security
+      cwe: "CWE-532: Insertion of Sensitive Information into Log File"
+      owasp: "MASWE-0001: Insertion of Sensitive Data into Logs"
