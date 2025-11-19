@@ -9,8 +9,8 @@ class MastgTest {
     try {
       mastgTestExternalPath();
       r.add(
-        Status.pass,
-        "A file has been written to external storage successfully.",
+        Status.fail,
+        "A file with sensitive data has been written to external storage successfully.",
       );
     } catch (e) {
       r.add(Status.error, e.toString());
