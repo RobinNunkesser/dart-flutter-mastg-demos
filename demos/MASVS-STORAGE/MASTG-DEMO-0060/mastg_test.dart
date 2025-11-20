@@ -10,8 +10,8 @@ class MastgTest {
   DemoResults mastgTest() {
     DemoResults r = DemoResults(demoId: '0001');
     try {
-      _write(_awsKey);
-      _write(_githubToken);
+      _write("EncryptedAWSKey", _awsKey);
+      _write("GitHubToken", _githubToken);
       r.add(
         Status.pass,
         "Sensitive data has been written and deleted in the sandbox.",
@@ -22,9 +22,9 @@ class MastgTest {
     return r;
   }
 
-  Future<void> _write(String value) async {
+  Future<void> _write(String key, String value) async {
     await _storage.write(
-      key: DateTime.timestamp().microsecondsSinceEpoch.toString(),
+      key: key,
       value: value,
       iOptions: _getIOSOptions(),
       aOptions: _getAndroidOptions(),
