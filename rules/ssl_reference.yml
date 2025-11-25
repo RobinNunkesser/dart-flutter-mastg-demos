@@ -1,0 +1,11 @@
+rules:
+  - id: dart-socketconnection-detected
+    pattern-either:
+      - pattern: $SOCKET.connect(...)
+    message: Socket connection detected. Ensure that SSL/TLS is properly configured to secure data in transit.
+    severity: WARNING
+    languages:
+      - dart
+    metadata:
+      category: security
+      owasp: "MASWE-0052:  Insecure Certificate Validation"

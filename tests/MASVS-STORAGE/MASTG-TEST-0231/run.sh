@@ -1,0 +1,1 @@
+NO_COLOR=true semgrep -c ../../../rules/logging_reference.yml ./mastg_test.dart > output.txt

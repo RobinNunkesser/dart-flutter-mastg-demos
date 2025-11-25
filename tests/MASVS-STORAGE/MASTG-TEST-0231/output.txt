@@ -1,0 +1,12 @@
+                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                   
+    mastg_test.dart
+    ❯❱ rules.dart-logging-detected
+          Logging statement detected. Ensure sensitive data is not logged in production.
+                                                                                        
+           27┆ log.info(sensitiveString);
+

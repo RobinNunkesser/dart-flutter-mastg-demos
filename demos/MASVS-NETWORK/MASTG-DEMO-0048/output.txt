@@ -1,0 +1,16 @@
+                  
+                  
+┌────────────────┐
+│ 1 Code Finding │
+└────────────────┘
+                   
+    mastg_test.dart
+    ❯❱ rules.dart-socketconnection-detected
+          Socket connection detected. Ensure that SSL/TLS is properly configured to secure data in transit.
+                                                                                                           
+           13┆ final socket = await SecureSocket.connect(
+           14┆   'wrong.host.badssl.com',
+           15┆   443,
+           16┆   onBadCertificate: (certificate) => true,
+           17┆ );
+
